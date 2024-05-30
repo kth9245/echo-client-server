@@ -83,7 +83,7 @@ void recvThread(int sd) {
 			}
 			if (param.broadcast){
 				for (int i=0; i<clients.size();i++){
-					if (clients[i] != sd || param.echo == false){
+					if (clients[i] != sd){
 						res = ::send(clients[i], buf, res, 0);
 						if (res == 0 || res == -1) {
 							fprintf(stderr, "send return %zd", res);
